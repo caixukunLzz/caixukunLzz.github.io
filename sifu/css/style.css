@@ -1,0 +1,49 @@
+
+body,ul {
+	padding: 0;
+	margin: 0;
+	
+}
+ul {
+	list-style: none;
+}
+.wrap {
+	position: relative;
+	width: 1200px;
+	height: 400px;
+	margin: 100px auto;
+	top: 60px;
+}
+.content {
+	position: absolute;
+	width: 1200px;
+	height: 400px;
+}
+.content li{
+	position: absolute;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.wrap a {
+	position: absolute;
+	display: none;
+	z-index: 2;
+	top: 43%;
+	width: 60px;
+	height: 60px;
+	margin-top: -30px;
+	font: 36px/60px "å®‹ä½“";
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	transition: background 1s ease;
+	background-position: 255;
+}
+.wrap a:hover {
+}
+.prev {
+	left: 30px;
+}
+.next {
+	right: 30px;
+}
