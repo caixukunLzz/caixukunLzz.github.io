@@ -5,7 +5,7 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 5.4.0"></head><body><header><nav><a href="/">首页</a><a href="/archives/">档案</a><a href="/more/">更多</a><a href="/data/">数据驾驶舱demo</a></nav></header><main><article><div id="post-bg"><div id="post-title"><h1></h1><hr></div><div id="post-content"><!DOCTYPE html>
+}</style><meta name="generator" content="Hexo 5.4.0"></head><body><header><nav><a href="/">首页</a><a href="/archives/">档案</a><a href="/more/">简历</a></nav></header><main><article><div id="post-bg"><div id="post-title"><h1></h1><hr></div><div id="post-content"><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,50 +13,89 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>嘿,欢迎来到我的代码世界！</title>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 
 <body>
-  <h2 style="text-align: center;">求职简历</h2>
-  <h3>个人信息</h3>
-  <table style="width: 98%;">
-    <tr>
-      <td>姓名</td>
-      <td>性别</td>
-      <td>年龄</td>
+  <div id="app">
+    <h2 style="text-align: center;">个人简历</h2>
+    <h3>基本信息</h3>
+    <table style="width: 98%;">
+      <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
 
-    </tr>
-    <tr>
-      <td>法外狂徒 张三</td>
-      <td>男</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <td>工作经验</td>
-      <td>电话</td>
-      <td>邮箱</td>
-    </tr>
-    <tr>
-      <td>3年</td>
-      <td>17788888888</td>
-      <td>734906252@qq.com</td>
-    </tr>
-    <tr>
-      <td>现居住地</td>
-      <td>求职意向</td>
-      <td>希望薪资</td>
-    </tr>
-    <tr>
-      <td>郑州市金水区</td>
-      <td>web前端开发工程师</td>
-      <td>>10k</td>
-    </tr>
-  </table>
-  <h3>项目经历</h3>
-  <div>名称：项目1 时间：2021-01-01</div>
-  <div>名称：项目2 时间：2021-02-02</div>
-  <div>名称：项目3 时间：2021-03-03</div>
-  <h3>自我评价</h3>
-  <div>鄙人不善于奔跑</div>
+      </tr>
+      <tr>
+        <td>法外狂徒 张三</td>
+        <td>男</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>工作经验</td>
+        <td>电话</td>
+        <td>邮箱</td>
+      </tr>
+      <tr>
+        <td>3年</td>
+        <td>17788888888</td>
+        <td>734906252@qq.com</td>
+      </tr>
+      <tr>
+        <td>现居住地</td>
+        <td>求职意向</td>
+        <td>希望薪资</td>
+      </tr>
+      <tr>
+        <td>郑州市金水区</td>
+        <td>web前端开发工程师</td>
+        <td>>10k</td>
+      </tr>
+    </table>
+    <el-divider></el-divider>
+    <h3>项目经历</h3>
+    <div>名称：项目1 时间：2021-01-01</div>
+    <div>名称：项目2 时间：2021-02-02</div>
+    <div>名称：项目3 时间：2021-03-03</div>
+    <el-divider></el-divider>
+    <h3>自我评价</h3>
+    <div style="margin-bottom: 40px;">鄙人不善于奔跑</div>
+    <el-divider></el-divider>
+    <h3>在html内使用element</h3>
+    <div style="width: 400px;background: wheat;">
+      <el-carousel height="200px">
+        <el-carousel-item v-for="(item,index) in list" :key="index">
+          <div style="color:darkred;text-align: center;line-height: 200px;height: 200px;" v-text="item.name"></div>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+    <el-divider></el-divider>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function () {
+        return {
+          value: new Date(),
+          visible: false,
+          list: [{
+            name: 'page 1'
+          }, {
+            name: 'page 2'
+          }, {
+            name: 'page 3'
+          }, {
+            name: 'page 4'
+          }]
+        }
+      }
+    })
+  </script>
 </body>
 
 </html><div id="paginator"></div></div><div id="post-footer"></div><div id="bottom-btn"><a id="to-index" href="#post-index" title="index">≡</a><a id="to-top" href="#post-title" title="to top">∧</a></div><div id="Valine"></div><script>new Valine({
@@ -64,4 +103,4 @@
  , appId: ''
  , appKey: ''
  , placeholder: '此条评论委托企鹅物流发送'
-})</script></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2538147308,2958950014&amp;fm=26&amp;gp=0.jpg" alt="Logo"></a><h1 id="Dr"><a target="_blank" rel="noopener" href="https://github.com/caixukunLzz"> Dr. Jack L</a></h1><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">3</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">0</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">0</span></div></section></div><div id="aside-block"></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 - 2021</span></nobr><wbr><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><wbr><wbr><nobr>&nbsp;</nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script></body></html>
+})</script></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2538147308,2958950014&amp;fm=26&amp;gp=0.jpg" alt="Logo"></a><h1 id="Dr"><a target="_blank" rel="noopener" href="https://github.com/caixukunLzz"> Dr. Jack L</a></h1><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">3</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">3</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">1</span></div></section></div><div id="aside-block"></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 - 2021</span></nobr><wbr><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><wbr><wbr><nobr>&nbsp;</nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script></body></html>
